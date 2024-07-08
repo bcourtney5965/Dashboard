@@ -7,6 +7,11 @@ describe('DashboardLayout', () => {
     expect(DashboardLayout).toBeInstanceOf(Function)
   })
 
+  it('renders without crashing', () => {
+    render(<DashboardLayout />)
+    expect(screen.getByTestId('dashboard-layout')).toBeInTheDocument()
+  })
+
   it('renders all sections', () => {
     render(<DashboardLayout />)
 
