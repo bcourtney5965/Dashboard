@@ -2,7 +2,7 @@ import React from 'react'
 
 function DashboardLayout() {
   return (
-    <div>
+    <div className="grid gap-4 md:grid-rows-2">
       <section>
         <h2>Income:</h2>
       </section>

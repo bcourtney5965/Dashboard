@@ -30,7 +30,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         <ColorSchemeScript />
       </head>
       <body className="bg-background text-foreground">
-        <main className="min-h-screen flex flex-col items-center">
+        <main className="min-h-screen">
           <MantineProvider>{children}</MantineProvider>
         </main>
       </body>
