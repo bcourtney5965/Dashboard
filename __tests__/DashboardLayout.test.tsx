@@ -1,6 +1,24 @@
-import '@testing-library/jest-dom'
+import React from 'react'
 import {render, screen} from '@testing-library/react'
+import '@testing-library/jest-dom'
 import DashboardLayout from '../app/home/DashboardLayout'
+
+// Mock window.matchMedia
+beforeAll(() => {
+  Object.defineProperty(window, 'matchMedia', {
+    writable: true,
+    value: jest.fn().mockImplementation((query) => ({
+      matches: query === '(max-width: 600px)', // Simulate mobile viewport
+      media: query,
+      onchange: null,
+      addListener: jest.fn(), // Deprecated
+      removeListener: jest.fn(), // Deprecated
+      addEventListener: jest.fn(),
+      removeEventListener: jest.fn(),
+      dispatchEvent: jest.fn(),
+    })),
+  })
+})
 
 describe('DashboardLayout', () => {
   it('returns a function', () => {
@@ -50,5 +68,11 @@ describe('DashboardLayout', () => {
       level: 1,
     })
     expect(incomeSection).toBeInTheDocument()
+  })
+
+  it('renders 1 column on small screens', () => {
+    const {getByTestId} = render(<DashboardLayout />)
+    const layoutElement = getByTestId('dashboard-layout')
+    expect(layoutElement).toHaveClass('grid-cols-1')
   })
 })
