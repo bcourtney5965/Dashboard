@@ -72,7 +72,19 @@ describe('DashboardLayout', () => {
 
   it('renders 1 column on small screens', () => {
     const {getByTestId} = render(<DashboardLayout />)
-    const layoutElement = getByTestId('dashboard-layout')
-    expect(layoutElement).toHaveClass('grid-cols-1')
+    const layout = getByTestId('dashboard-layout')
+    expect(layout).toHaveClass('grid-cols-1')
+  })
+
+  it('renders 12 columns on large screens', () => {
+    const {getByTestId} = render(<DashboardLayout />)
+    Object.defineProperty(window, 'innerWidth', {
+      writable: true,
+      configurable: true,
+      value: 1200, // Set to a large screen width
+    })
+    window.dispatchEvent(new Event('resize'))
+    const layout = getByTestId('dashboard-layout')
+    expect(layout).toHaveClass('lg:grid-cols-12')
   })
 })
