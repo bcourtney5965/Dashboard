@@ -1,12 +1,11 @@
 // Mantine styles
-import '@mantine/core/styles.layer.css'
-import '@mantine/charts/styles.layer.css'
-import '@mantine/code-highlight/styles.layer.css'
-import '@mantine/core/styles.layer.css'
-import '@mantine/dates/styles.layer.css'
-import '@mantine/notifications/styles.layer.css'
-import '@mantine/nprogress/styles.layer.css'
-import '@mantine/spotlight/styles.layer.css'
+import '@mantine/core/styles.css'
+import '@mantine/charts/styles.css'
+import '@mantine/code-highlight/styles.css'
+import '@mantine/dates/styles.css'
+import '@mantine/notifications/styles.css'
+import '@mantine/nprogress/styles.css'
+import '@mantine/spotlight/styles.css'
 
 // imports Tailwind CSS
 import './globals.css'
@@ -30,9 +29,9 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         <ColorSchemeScript />
       </head>
       <body className="bg-background text-foreground">
-        <main className="min-h-screen">
-          <MantineProvider>{children}</MantineProvider>
-        </main>
+        <MantineProvider>
+          <main className="min-h-screen">{children}</main>
+        </MantineProvider>
       </body>
     </html>
   )
