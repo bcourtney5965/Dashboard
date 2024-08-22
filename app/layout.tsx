@@ -1,5 +1,13 @@
 // imports Tailwind CSS
-import './globals.css'
+import '../styles/globals.css'
+import {Inter as FontSans} from 'next/font/google'
+
+import {cn} from '@/lib/utils'
+
+const fontSans = FontSans({
+  subsets: ['latin'],
+  variable: '--font-sans',
+})
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -14,7 +22,12 @@ export const metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en">
-      <body className="bg-background text-foreground">
+      <body
+        className={cn(
+          'min-h-screen bg-background font-sans antialiased',
+          fontSans.variable,
+        )}
+      >
         <main className="min-h-screen">{children}</main>
       </body>
     </html>
