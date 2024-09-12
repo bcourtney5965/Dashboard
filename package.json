@@ -29,6 +29,7 @@
     "recharts": "^2.12.7"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.15",
     "@testing-library/jest-dom": "^6.4.6",
     "@testing-library/react": "^16.0.0",
     "@types/jest": "^29.5.12",
@@ -46,6 +47,7 @@
     "postcss-preset-mantine": "^1.15.0",
     "postcss-simple-vars": "^7.0.1",
     "tailwindcss": "^3.3.0",
+    "tailwindcss-animate": "^1.0.7",
     "ts-node": "^10.9.2",
     "typescript": "^5"
   },
