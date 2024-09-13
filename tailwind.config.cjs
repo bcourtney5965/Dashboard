@@ -7,6 +7,7 @@ module.exports = {
   content: [
     './app/**/*.{js,ts,jsx,tsx}',
     './components/ui/**/*.{js,ts,jsx,tsx}',
+    './.storybook/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     container: {

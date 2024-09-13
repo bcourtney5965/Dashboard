@@ -1,4 +1,4 @@
-import {createClient} from '@/utils/supabase/server'
+import {createClient} from 'root/utils/supabase/server'
 import UserList from './userList'
 import DashboardLayout from './DashboardLayout'
 

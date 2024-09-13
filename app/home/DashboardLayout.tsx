@@ -1,11 +1,11 @@
 'use client'
 import React from 'react'
-import { Button } from "@/components/ui/button"
+import { Button } from "root/components/ui/button"
 
 function DashboardLayout() {
   return (
     <>
-      <Button>Button</Button>
+      <Button className="bg-red-700">Button</Button>
       <div
         data-testid="dashboard-layout"
         className="bg-blue-500 grid grid-cols-1 gap-4 lg:grid-cols-12 lg:grid-rows-4 lg:gap-2 lg:p-2"
